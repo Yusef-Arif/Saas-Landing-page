@@ -1,5 +1,6 @@
 import SectionHeader from "../section-header";
 import { cube, cubeHelix1 } from "../../assets/images";
+import { motion } from "motion/react";
 
 export const Features = () => {
   const cards = [
@@ -16,7 +17,7 @@ export const Features = () => {
   ];
 
   return (
-    <section className="section-space">
+    <section className="section-space space-y-7">
       <SectionHeader
         badge={"Everything you need"}
         h={"Streamlined for easy management"}
@@ -24,13 +25,28 @@ export const Features = () => {
           "Enjoy customizable lists, team work tools, and smart tracking all in one place. Set tasks, get reminders, and see your progress simply and quickly."
         }
       />
-      <div className="container center gap-7 mt-10">
+      <div className="container center gap-7 mt-10 max-md:flex-col max-md:p-10 max-md:m-5">
         {cards.map((card, index) => (
-          <div key={index} className="center space-y-2 p-4 rounded-2xl shadow-lg flex-col text-center text-secondary">
-            <img src={card.img} alt={card.title} />
+          <motion.div
+            whileHover={{ scale: 1.05 ,transition:{duration:0.3}}}
+            key={index}
+            className="center space-y-2 p-7 rounded-2xl shadow-lg flex-col text-center text-secondary"
+          >
+            <motion.img
+              animate={{
+                y: [30, -15],
+                transition: {
+                  duration: 3,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                },
+              }}
+              src={card.img}
+              alt={card.title}
+            />
             <h3 className="font-bold text-3xl">{card.title}</h3>
             <p className="max-w-lg">{card.desc}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

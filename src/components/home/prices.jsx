@@ -1,3 +1,4 @@
+import { fadeIn } from "../../variants";
 import PricePlane from "../price-plane";
 import SectionHeader from "../section-header";
 
@@ -54,15 +55,15 @@ const Prices = () => {
           "Free forever. Upgrade for unlimited tasks, better security, and exclusive features."
         }
       />
-      <div className="container flex justify-evenly gap-10 items-end">
-        {plans.map((plane) => (
-          <PricePlane
-            key={plane}
-            features={plane.features}
-            plane={plane.plane}
-            price={plane.price}
-            bg={plane.bg}
-          />
+      <div className="container flex justify-evenly gap-10 md:items-end max-md:flex-col">
+        {plans.map((plane, index) => (
+            <PricePlane
+              key={index}
+              features={plane.features}
+              plane={plane.plane}
+              price={plane.price}
+              bg={plane.bg}
+            />
         ))}
       </div>
     </section>

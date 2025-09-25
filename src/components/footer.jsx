@@ -24,25 +24,30 @@ const Footer = () => {
     { icon: <Instagram /> },
   ];
   return (
-    <footer className="bg-black py-10">
+    <footer className="bg-black py-10 px-4 sm:px-6 lg:px-0">
       <div className="container">
-        <div className="flex justify-between">
-          <div className="space-y-4">
-            <img src={logo} alt="logo" />
-            <p className="text-white/80 max-w-sm">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-0 lg:justify-between">
+          <div className="space-y-4 max-w-sm text-center lg:text-left">
+            <img src={logo} alt="logo" className="mx-auto lg:mx-0 h-8" />
+            <p className="text-white/80 text-sm sm:text-base">
               Effortlessly turn your ideas into a fully functional, responsive,
               no-code SaaS website.
             </p>
           </div>
 
-          <div className="grid grid-cols-5 gap-7">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-12 lg:gap-7">
             {Links.map((link, index) => (
               <div key={index} className="space-y-3">
-                <h4 className="text-white font-semibold">{link.title}</h4>
+                <h4 className="text-white font-semibold text-lg">
+                  {link.title}
+                </h4>
                 <ul className="space-y-2">
                   {link.links.map((item, i) => (
                     <li key={i}>
-                      <a href="#" className="text-white/80 hover:underline">
+                      <a
+                        href="#"
+                        className="text-white/80 hover:underline text-sm sm:text-base transition-colors duration-200"
+                      >
                         {item}
                       </a>
                     </li>
@@ -52,10 +57,15 @@ const Footer = () => {
             ))}
           </div>
         </div>
-        <div>
-          <div className="flex gap-5 text-white/80">
+
+        <div className="mt-12 pt-8 border-t border-white/10">
+          <div className="flex justify-center lg:justify-start gap-6 text-white/80">
             {socialLinks.map((social, index) => (
-              <a key={index} href={'#'} className="hover:text-white">
+              <a
+                key={index}
+                href={"#"}
+                className="hover:text-white transition-colors duration-200 p-2"
+              >
                 {social.icon}
               </a>
             ))}

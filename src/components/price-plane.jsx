@@ -1,10 +1,17 @@
+import { fadeIn, revealText } from "../variants";
 import Badge from "./badge";
 import Button from "./button";
 import { Check } from "lucide-react";
+import { motion } from "motion/react";
 
 const PricePlane = ({ plane, price, features, bg }) => {
   return (
-    <div
+    <motion.div
+      whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
+      initial={"hidden"}
+      whileInView={"visible"}
+      viewport={{ once: false, amount: 0.5 }}
+      variants={fadeIn()}
       className={`${
         bg ? "bg-black text-white" : "text-secondary"
       } p-10 border-black/5 border shadow-lg rounded-2xl  space-y-5`}
@@ -12,7 +19,7 @@ const PricePlane = ({ plane, price, features, bg }) => {
       <div className="flex justify-between">
         <h2 className="font-bold mb-5 text-xl ">{plane}</h2>
         {bg && (
-          <Badge border='white'>
+          <Badge border="white">
             <span className="gradiant-text !text-md">Most Popular</span>
           </Badge>
         )}
@@ -26,10 +33,18 @@ const PricePlane = ({ plane, price, features, bg }) => {
       {features.map((feature) => (
         <p key={feature} className="flex items-center mb-3">
           <Check className="mr-2" />
-          {feature}
+          {feature.split(" ").map((word, index) => (
+            <motion.span
+              key={index}
+              className="inline-block mr-1"
+              variants={revealText(index * 0.1)}
+            >
+              {word}
+            </motion.span>
+          ))}
         </p>
       ))}
-    </div>
+    </motion.div>
   );
 };
 
