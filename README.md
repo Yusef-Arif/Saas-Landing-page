@@ -40,8 +40,4 @@ npm start
 
 Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 📜 License
-This project is licensed under the [MIT License](LICENSE).
-
----
 > The animations are the heart of this project, built entirely with **Framer Motion** for a smooth and delightful user experience.
