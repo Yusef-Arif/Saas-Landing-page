@@ -47,7 +47,7 @@ const Prices = () => {
     },
   ];
   return (
-    <section className="section-space">
+    <section className="section-space" id="pricing">
       <SectionHeader
         badge={"Flexible plans"}
         h={"Pricing"}

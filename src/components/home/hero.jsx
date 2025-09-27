@@ -1,6 +1,6 @@
 import Button from "../button";
 import { cylinder1, halfTorus1, visual1 } from "../../assets/images";
-import Slider from "./Slider";
+import Slider from "../Slider";
 import Badge from "../badge";
 import { motion } from "motion/react";
 import { mainText, revealText, slideX, slideY } from "../../variants";
@@ -10,7 +10,7 @@ const Hero = () => {
     <motion.section
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.3 }}
     >
       <div className="h-[100vh] center hero-gradient">
         <div className="container flex justify-between items-center max-md:flex-col">

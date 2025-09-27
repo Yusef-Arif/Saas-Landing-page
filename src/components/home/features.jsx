@@ -17,7 +17,7 @@ export const Features = () => {
   ];
 
   return (
-    <section className="section-space space-y-7">
+    <section className="section-space space-y-7" id="features">
       <SectionHeader
         badge={"Everything you need"}
         h={"Streamlined for easy management"}

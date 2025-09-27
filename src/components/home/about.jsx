@@ -7,9 +7,10 @@ import { flip, mainText, revealText, slideX } from "../../variants";
 const About = () => {
   return (
     <motion.section
+      id="about"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.5 }}
+      viewport={{ once: true, amount: 0.5 }}
       className="section-space about-gradient"
     >
       <SectionHeader

@@ -9,9 +9,10 @@ const Signup = () => {
     "Celebrate the joy of accomplishment with an app designed to track your progress and motivate your efforts.";
   return (
     <motion.section
+      id="contact"
       initial="hidden"
       whileInView={"visible"}
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.3 }}
       className="mt-20 center about-gradient min-h-[55vh] px-4 py-16 relative"
     >
       <motion.img

@@ -1,4 +1,3 @@
-
 export const container = {
   hidden: {},
   visible: {
@@ -40,7 +39,7 @@ export const fadeIn = (delay = 0) => {
     visible: {
       opacity: 1,
       transition: {
-        duration: .6,
+        duration: 0.6,
         ease: "easeIn",
         delay,
       },
@@ -78,10 +77,25 @@ export const slideX = (x) => {
   };
 };
 
-
-export const flip = ()=>{
-  return{
+export const flip = () => {
+  return {
     hidden: { rotateX: 90 },
     visible: { rotateX: 0, transition: { duration: 1 } },
-  }
-}
+  };
+};
+
+export const sliderVariants = (delay = 0, len) => {
+  return {
+    hidden: {},
+    visible: {
+      y: [0, -100 * len],
+      transition: {
+        duration: 20,
+        repeat: Infinity,
+        ease: "linear",
+        repeatType: "loop",
+        delay,
+      },
+    },
+  };
+};

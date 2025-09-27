@@ -7,6 +7,7 @@ const SectionHeader = ({ badge, h, p }) => {
     <motion.div
       initial="hidden"
       whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
       className="flex flex-col justify-center items-center gap-2 sm:gap-3 px-4 sm:px-6"
     >
       <Badge>{badge}</Badge>

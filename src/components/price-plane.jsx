@@ -10,7 +10,7 @@ const PricePlane = ({ plane, price, features, bg }) => {
       whileHover={{ scale: 1.05, transition: { duration: 0.3 } }}
       initial={"hidden"}
       whileInView={"visible"}
-      viewport={{ once: false, amount: 0.5 }}
+      viewport={{ once: true, amount: 0.5 }}
       variants={fadeIn()}
       className={`${
         bg ? "bg-black text-white" : "text-secondary"
